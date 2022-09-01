@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+{%load static%}
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+		
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				
+
+			<!-- Nav -->
+			{% include 'antiScam/element/nav.html' %}
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<h2 class="major" ><span> available ACTIVITIES</span></h2>
+						<div class="row"  style="border-bottom: 2px solid #6b7770 ;">
+							
+							<div class="col-9 col-12-medium">
+								<div class="content">
+
+									<!-- Content -->
+									<h2>Helping seniors overcome technological barriers and scam propaganda</h2>
+									<span class="image featured"><img src="{% static 'images/teeniors_2.jpg' %}" ></span>
+
+								</div>
+							</div>
+							<div class="col-3 col-12-medium">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+									
+									<h2 style="margin: 0;">06 Jun 2022 14:00</h2>
+									<h2>bugis</h2>
+
+									<h2 style="margin: 0;">you can join as:</h2>
+									<p style="margin: 0;">- Volunteers to help us</p>
+									<p style="margin: 0;">- Participants to gain more information</p>
+
+									<a href="/activitiesDetail1" class="button">view more details</a>
+									
+								
+								
+
+								</div>
+							</div>
+							
+						</div>
+
+						<div class="row"  style="border-bottom: 2px solid #6b7770 ; margin-top: 10px;">
+							
+							<div class="col-9 col-12-medium">
+								<div class="content">
+
+									<!-- Content -->
+									<h2>ONLINE ANTI-SCAM EDUCATIONAL TALK</h2>
+									<span class="image featured"><img src="{% static 'images/1_9G5D4yhuf7ZGD1JsKzqVrA.png' %}" ></span>
+
+								</div>
+							</div>
+							<div class="col-3 col-12-medium">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+									<h2 style="margin: 0;">03 Jun 2022 15:00</h2>
+									<h2> ONLINE VIE ZOOM MEETING</h2>
+
+									<h2 style="margin: 0;">you can join as:</h2>
+									<p style="margin: 0;">Participants to gain more information</p>
+
+									<a href="/activitiesDetail2" class="button">view more details</a>
+									
+								
+								
+
+								</div>
+							</div>
+							
+						</div>
+						{% for activity in master_activities %}
+
+						
+					    <div class="row"  style="border-bottom: 2px solid #6b7770 ; margin-top: 10px;">
+							
+							<div class="col-9 col-12-medium">
+								<div class="content">
+
+									<!-- Content -->
+									<h2>{{activity.activitesTitle}}</h2>
+									<span class="image featured"><img src="{% static 'images/activites.jpg' %}" ></span>
+
+								</div>
+							</div>
+							<div class="col-3 col-12-medium">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+									<h2 style="margin: 0;">{{activity.activitesDate}} {{activity.activitesTime}}</h2>
+									<h2>{{activity.activitesLocation }}</h2>
+
+									<h2 style="margin: 0;">you can join as:</h2>
+									<p style="margin: 0;">{{activity.canJoinAs|linebreaksbr}}</p>
+									<p></p>
+									<a href="/activity/{{activity.pk}}" class="button">view more details</a>
+									
+								
+								
+
+								</div>
+							</div>
+							
+						</div>
+					 {% endfor %}
+
+
+
+
+
+
+					</div>
+				</section>
+
+				{% include 'antiScam/element/footer.html' %}
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+	</body>
+</html>
